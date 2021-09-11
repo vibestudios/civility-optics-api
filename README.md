@@ -21,7 +21,7 @@ To run the server to the database, use the command `mongod` anywhere in the term
 
 ## Running
 
-To run the server run the command node server.js in the terminal
+To run the server run the command, enter the `backend` directory and run `node server.js` in the terminal
 
 The request to post to the ratings collection is `localhost:5000/postRatings`
 
