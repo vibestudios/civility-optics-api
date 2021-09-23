@@ -5,6 +5,9 @@ const ratingsSchema = new Schema({
     value: {
         type: Number,
         required: true
+    },
+    tags: {
+        type: Array
     }
 });
 

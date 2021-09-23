@@ -25,4 +25,4 @@ To run the server run the command, enter the `backend` directory and run `node s
 
 The request to post to the ratings collection is `localhost:5000/postRatings`
 
-The syntax of the response body is `{"value":x}` where x is a number from 1 to 5
+The syntax of the response body is `{"value":x, "tags":["", "", ...]}` where x is a number from 1 to 5, and tags is an array of strings
