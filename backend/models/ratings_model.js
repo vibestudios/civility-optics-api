@@ -8,6 +8,10 @@ const ratingsSchema = new Schema({
     },
     tags: {
         type: Array
+    },
+    place_id: {
+        type: String,
+        required: true
     }
 });
 
