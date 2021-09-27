@@ -7,15 +7,16 @@ Make sure you have Node.js and NPM installed: https://nodejs.org/en/download/. T
 
 Clone the repo
 
-Install the express library using `npm install express` in the terminal
+Install the required packages by running the following commands in the terminal:
 
-Install the express async handler using `npm install express-async-handler`
-
-Install the mongoose library using `npm install mongoose` in the terminal
-
-Install the cors library using `npm install cors` in the terminal
-
-Install MongoDB using `npm install mongodb` in the terminal
+```
+npm install express
+npm install express-async-handler
+npm install mongoose
+npm install cors
+npm install dotenv
+npm install mongodb
+```
 
 To run the server to the database, use the command `mongod` anywhere in the terminal
 
