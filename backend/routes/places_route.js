@@ -3,8 +3,8 @@ import { getPlaceDetails, getPlaceAutoComplete } from '../controllers/places_con
 
 const placesRouter = express.Router();
 
-placesRouter.route('/getPlaceDetails').get(getPlaceDetails)
+placesRouter.route('/getPlaceDetails').post(getPlaceDetails)
 
-placesRouter.route('/getPlaceAutoComplete').get(getPlaceAutoComplete)
+placesRouter.route('/getPlaceAutoComplete').post(getPlaceAutoComplete)
 
 export default placesRouter
