@@ -16,6 +16,7 @@ npm install mongoose
 npm install cors
 npm install dotenv
 npm install mongodb
+npm install axios
 ```
 
 To run the server to the database, use the command `mongod` anywhere in the terminal
