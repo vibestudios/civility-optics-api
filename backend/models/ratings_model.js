@@ -12,6 +12,10 @@ const ratingsSchema = new Schema({
     place_id: {
         type: String,
         required: true
+    },
+    date_visited: {
+        type: Date,
+        required: true
     }
 });
 

@@ -26,7 +26,7 @@ To run the server run the command, enter the `backend` directory and run `node s
 
 The request to post to the ratings collection is `localhost:5000/postRatings`
 
-The syntax of the response body is `{"value":x, "tags":["", "", ...], "place_id": "<id>"}` where x is a number from 1 to 5, tags is an array of strings, and place_id is a string signifying the business's ID.
+The syntax of the response body is `{"value":x, "tags":["", "", ...], "place_id": "<id>", "date_visited: "<date>"}` where x is a number from 1 to 5, tags is an array of strings, id is a string signifying the business's ID, and date is the date the user selected to post the rating.
 
 
 The request to get the ratings for a specifited business is `localhost:5000/getRatings`
