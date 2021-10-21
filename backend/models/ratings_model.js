@@ -16,6 +16,10 @@ const ratingsSchema = new Schema({
     date_visited: {
         type: Date,
         required: true
+    },
+    review: {
+        type: String,
+        required: false
     }
 });
 

@@ -23,11 +23,8 @@ export const postRating = asyncHandler(async(req, res) => {
             }
         ]
         const ratings = await Ratings.aggregate(pipeline)
-        res.json(ratings)
-
-
-        
-        res.status(200).send(rating)
+       
+        res.status(200).json(ratings)
     } catch (error) {
         res.status(400).send(error)
     }
@@ -50,9 +47,38 @@ export const getRating = asyncHandler(async(req, res) => {
             }
         ]
         const ratings = await Ratings.aggregate(pipeline)
-        res.json(ratings)
-        res.status(200).send(rating)
+        res.status(200).json(ratings)
     } catch (error) {
         res.status(400).send(error)
     }
+})
+
+export const getReviews = asyncHandler(async(req, res) => {
+  try {
+      const pipeline = [
+        {
+          '$match': {
+            'place_id': req.body.place_id, 
+            'review': {
+              '$exists': true
+            }
+          }
+        }, {
+          '$sort': {
+            'date_visited': -1
+          }
+        }, {
+          '$limit': req.body.limit
+        }, {
+          '$project': {
+            'review': '$review', 
+            'date_visited': '$date_visited'
+          }
+        }
+      ]
+      const reviews = await Ratings.aggregate(pipeline)
+      res.status(200).json(reviews)
+  } catch (error) {
+      res.status(400).send(error)
+  }
 })

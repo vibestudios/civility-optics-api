@@ -27,9 +27,13 @@ To run the server run the command, enter the `backend` directory and run `node s
 
 The request to post to the ratings collection is `localhost:5000/postRatings`
 
-The syntax of the response body is `{"value":x, "tags":["", "", ...], "place_id": "<id>", "date_visited: "<date>"}` where x is a number from 1 to 5, tags is an array of strings, id is a string signifying the business's ID, and date is the date the user selected to post the rating.
+The syntax of the response body is `{"value":x, "tags":["", "", ...], "place_id": "<id>", "date_visited: "<date>", "review:" "<review>"}` where x is a number from 1 to 5, tags is an array of strings, id is a string signifying the business's ID, date is the date the user selected to post the rating, and review is a user-inputted string of their review.
 
 
 The request to get the ratings for a specifited business is `localhost:5000/getRatings`
 
 The syntax of the response body is `{"place_id": "<id>"}` where x place_id is a string signifying the business's ID. Returns a JSON with the `_id` tag being the place_id and the `avg_rating` tag being the average rating for that business.
+
+The request to get the reviews for a specifited business is `localhost:5000/getReviews`
+
+The syntax of the response body is `{"place_id": "<id>", "limit":x}` where place_id is a string signifying the business's ID, and x is a number signifying the max number of reviews you want returned. Returns a JSON with the `review` field being the review and the `date_visited` field being the date the reviewer visited the business, sorted by most recent to least recent.
