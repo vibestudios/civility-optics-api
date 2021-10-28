@@ -29,9 +29,11 @@ To run the server to the database, use the command `mongod` anywhere in the term
 
 To run the server run the command, enter the `backend` directory and run `node server.js` in the terminal
 
+
 The request to post to the ratings collection is `localhost:5000/postRatings` (POST)
 
 The syntax of the response body is `{"value":x, "tags":["", "", ...], "place_id": "<id>", "date_visited: "<date>", "review:" "<review>"}` where x is a number from 1 to 5, tags is an array of strings, id is a string signifying the business's ID, date is the date the user selected to post the rating, and review is a user-inputted string of their review.
+In order to proprely post a rating, the backend makes sure that the user is authorized. You must include a header in the request called `Authorization` with the value `Bearer <token>`, where `token` is a JSON Web Token retrieved when a user logs in. More details later.
 
 
 The request to get the ratings for a specifited business is `localhost:5000/getRatings` (POST)
@@ -59,8 +61,8 @@ In order to proprely retrieve the user, you must include a header in the request
 
 
 he request to logout the user on their current device is `localhost:5000/users/me/logout` (GET).
-In order to proprely retrieve the user, you must include a header in the request called `Authorization` with the value `Bearer <token>`, where token is the aformentioned `token`.
+In order to proprely logout the  user, you must include a header in the request called `Authorization` with the value `Bearer <token>`, where token is the aformentioned `token`.
 
 
 he request to logout the user on all devices is `localhost:5000/users/me/logoutall` (GET).
-In order to proprely retrieve the user, you must include a header in the request called `Authorization` with the value `Bearer <token>`, where token is the aformentioned `token`.
+In order to proprely logout the user, you must include a header in the request called `Authorization` with the value `Bearer <token>`, where token is the aformentioned `token`.
