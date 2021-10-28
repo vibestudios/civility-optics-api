@@ -12,6 +12,7 @@ const app = express();
 const PORT = 5000;
 import ratingRouter from './routes/ratings_route.js';
 import placesRouter from './routes/places_route.js';
+import userRouter from './routes/users_route.js';
 
 app.use(cors());
 
@@ -25,6 +26,7 @@ connection.once('open', function() {
 app.use(express.json())
 app.use(ratingRouter);
 app.use(placesRouter);
+app.use(userRouter);
 
 app.listen(PORT, function() {
     console.log("Server is running on Port " + PORT);
