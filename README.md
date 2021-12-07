@@ -1,24 +1,7 @@
-# civility-optics-api
+# Civility Optics Api
 The API connector to communicate the app with the database.
 
-# Release Notes
-v 1.0.0, build 1
-
-## Features
-- Post user-submitted ratings for a certain venue to our database.
-- Get user-submitted ratings for a certain venue from our database.
-- Get comments from users about a vertain venur from our database.
-- Create user accounts, login users, and logout users from our system.
-- Leverage Google Places API to return a list of nearby venues based on a user's input
-- Leverage Google Places API to return specific info about a venue.
-
-## Known Issues
-- Some requests are formatted as POST but should really be GET.
-- In getRatings, ratings from the last 30 days should be returned, but all ratings are being returned.
-- In getReviews, null reviews aren't bring filtered out.
-
 # Installation Guide
-
 
 ## Pre-requisites
 Make sure you have Node.js version 14.16 and NPM version 6.14 installed: https://nodejs.org/en/download/. You can follow the tutorial provided here: https://phoenixnap.com/kb/install-node-js-npm-on-windows.
@@ -49,11 +32,29 @@ npm install bcryptjs
 npm install jsonwebtoken
 npm install nodemailer
 ```
+
 ## Running
 
 To start the backend service locally, enter the `civility-optics-api/backend` directory and run the command `node server.js` in the terminal.
 
 To run the server to the database, use the command `mongod` anywhere in the terminal.
+
+# Release Notes
+
+#### v 1.0.0, build 1
+
+## Features
+- Post user-submitted ratings for a certain venue to our database.
+- Get user-submitted ratings for a certain venue from our database.
+- Get comments from users about a vertain venur from our database.
+- Create user accounts, login users, and logout users from our system.
+- Leverage Google Places API to return a list of nearby venues based on a user's input
+- Leverage Google Places API to return specific info about a venue.
+
+## Known Issues
+- Some requests are formatted as POST but should really be GET.
+- In getRatings, ratings from the last 30 days should be returned, but all ratings are being returned.
+- In getReviews, null reviews aren't bring filtered out.
 
 # Endpoint Details
 
