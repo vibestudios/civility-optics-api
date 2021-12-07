@@ -9,7 +9,7 @@ if (result.error) {
 }
 
 const app = express();
-const PORT = 5000;
+const PORT = process.env.PORT;
 import ratingRouter from './routes/ratings_route.js';
 import placesRouter from './routes/places_route.js';
 import userRouter from './routes/users_route.js';
