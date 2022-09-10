@@ -3,10 +3,9 @@ import asyncHandler from 'express-async-handler'
 
 export const postRating = asyncHandler(async(req, res) => {
     try {
-        console.log(req.body)
         const rating = new Ratings(req.body)
         await rating.save()
-
+        console.log("rating.save worked")
 
         const pipeline = [
             {
@@ -71,7 +70,9 @@ export const getReviews = asyncHandler(async(req, res) => {
           '$limit': req.body.limit
         }, {
           '$project': {
-            'review': '$review', 
+            'review': '$review',
+            'value': '$value',
+            'tags': '$tags',
             'date_visited': '$date_visited'
           }
         }

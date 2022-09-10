@@ -5,7 +5,7 @@ import { getRating, postRating, getReviews } from '../controllers/ratings_contro
 
 const ratingRouter = express.Router();
 
-ratingRouter.route('/postRating').post(auth, postRating)
+ratingRouter.route('/postRating').post(postRating)
 
 ratingRouter.route('/getRating').post(getRating)
 

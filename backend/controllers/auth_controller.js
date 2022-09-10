@@ -3,6 +3,8 @@ import jwt from 'jsonwebtoken'
 import User from '../models/users_model.js'
 
 const auth = async(req, res, next) => {
+    console.log("Request Body")
+    console.log(req.body)
     const token = req.header('Authorization').replace('Bearer ', '')
     const data = jwt.verify(token, process.env.JWT_KEY)
     try {
