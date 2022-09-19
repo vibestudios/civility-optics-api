@@ -27,6 +27,11 @@ const userSchema = mongoose.Schema({
     required: true,
     minLength: 7
   },
+  role: { 
+    type: String, 
+    enum: ['reviewer', 'business', 'moderator'],
+    required: true
+  },
   tokens: [{
     token: {
       type: String,

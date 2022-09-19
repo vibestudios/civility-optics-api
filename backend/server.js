@@ -16,9 +16,10 @@ import userRouter from './routes/users_route.js';
 
 app.use(cors());
 
-mongoose.connect('mongodb://127.0.0.1:27017/CivilityOptics', { useNewUrlParser: true });
-const connection = mongoose.connection;
+mongoose.connect('mongodb+srv://CivilityOptics:5Fists@civility1.7zzflo5.mongodb.net/?retryWrites=true&w=majority', 
+{ useNewUrlParser: true });
 
+const connection = mongoose.connection;
 connection.once('open', function() {
     console.log("MongoDB database connection established successfully");
 })
